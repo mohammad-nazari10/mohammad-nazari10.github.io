@@ -2,50 +2,310 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وب‌سایت شخصی من</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محمد | برنامه‌نویس آینده</title>
 
-    <style>
-        body {
-            background-color: #0f172a;
-            color: white;
-            font-family: Tahoma, sans-serif;
-            text-align: center;
-            padding: 40px 20px;
-        }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        .box {
-            background-color: #1e293b;
-            padding: 25px;
-            margin: 20px auto;
-            border-radius: 15px;
-            max-width: 500px;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        h1 {
-            color: #60a5fa;
-        }
-    </style>
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    background: #080d1a;
+    color: #f1f5f9;
+    line-height: 1.9;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: #0f172acc;
+    border-bottom: 1px solid #26324a;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    color: #60a5fa;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+nav a {
+    color: #e2e8f0;
+    text-decoration: none;
+    margin-right: 16px;
+    font-size: 14px;
+}
+
+.hero {
+    min-height: 75vh;
+    padding: 100px 20px 70px;
+    text-align: center;
+    background:
+      radial-gradient(ellipse at top, #243c78 0%, #080d1a 65%);
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 16px;
+    border: 1px solid #3b82f6;
+    border-radius: 30px;
+    color: #93c5fd;
+    font-size: 13px;
+}
+
+h1 {
+    font-size: clamp(32px, 7vw, 55px);
+    margin: 25px 0 12px;
+}
+
+h1 span {
+    color: #60a5fa;
+}
+
+.hero p {
+    color: #cbd5e1;
+    max-width: 580px;
+    margin: 0 auto 25px;
+}
+
+.button {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 10px 23px;
+    border-radius: 9px;
+    margin: 7px;
+    transition: 0.25s;
+}
+
+.button:hover {
+    background: #7c3aed;
+    transform: translateY(-3px);
+}
+
+.button.secondary {
+    background: transparent;
+    border: 1px solid #475569;
+}
+
+section {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 29px;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card {
+    background: linear-gradient(145deg, #172238, #101827);
+    border: 1px solid #29364e;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: right;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #60a5fa;
+}
+
+.icon {
+    font-size: 32px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    color: #93c5fd;
+}
+
+.card p {
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.skill {
+    background: #172554;
+    border: 1px solid #1d4ed8;
+    border-radius: 10px;
+    padding: 10px 18px;
+}
+
+.contact-box {
+    max-width: 650px;
+    margin: auto;
+    padding: 30px;
+    background: #111b2e;
+    border-radius: 16px;
+    border: 1px solid #29364e;
+}
+
+footer {
+    text-align: center;
+    color: #94a3b8;
+    padding: 25px;
+    border-top: 1px solid #26324a;
+    font-size: 13px;
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 12px 5%;
+    }
+
+    nav a {
+        margin-right: 8px;
+        font-size: 12px;
+    }
+
+    section {
+        padding: 50px 6%;
+    }
+}
+</style>
 </head>
 
 <body>
-    <h1>سلام! 👋</h1>
 
-    <div class="box">
-        <h2>به سایت شخصی من خوش آمدی</h2>
-        <p>من در حال یادگیری برنامه‌نویسی پایتون هستم.</p>
+<nav>
+    <div class="logo">Mohammad.dev</div>
+    <div>
+        <a href="#about">درباره من</a>
+        <a href="#skills">مهارت‌ها</a>
+        <a href="#projects">پروژه‌ها</a>
     </div>
+</nav>
 
-    <div class="box">
-        <h2>مهارت‌های من 💻</h2>
-        <p>🐍 Python</p>
-        <p>🌐 طراحی وب</p>
-    </div>
+<header class="hero">
+    <span class="badge">🚀 در مسیر یادگیری برنامه‌نویسی</span>
 
-    <div class="box">
-        <h2>پروژه‌های من 🚀</h2>
-        <p>به‌زودی پروژه‌هایم را اینجا قرار می‌دهم!</p>
+    <h1>سلام، من <span>محمد</span> هستم!</h1>
+
+    <p>
+        به دنیای من خوش اومدی.
+        من عاشق یادگیری تکنولوژی و ساختن ایده‌های جدید با کدنویسی هستم.
+    </p>
+
+    <a class="button" href="#projects">دیدن پروژه‌ها ↓</a>
+    <a class="button secondary" href="#about">بیشتر درباره من</a>
+</header>
+
+<section id="about">
+    <h2 class="section-title">👨‍💻 درباره من</h2>
+    <p class="section-description">شروع یک مسیر هیجان‌انگیز!</p>
+
+    <div class="contact-box">
+        <p>
+            من در حال یادگیری برنامه‌نویسی هستم و هدفم اینه که
+            با تمرین، پروژه‌های واقعی بسازم و هر روز پیشرفت کنم.
+        </p>
     </div>
+</section>
+
+<section id="skills">
+    <h2 class="section-title">⚡ مهارت‌های من</h2>
+    <p class="section-description">چیزهایی که یاد می‌گیرم</p>
+
+    <div class="skills">
+        <div class="skill">🐍 Python</div>
+        <div class="skill">🌐 HTML</div>
+        <div class="skill">🎨 CSS</div>
+        <div class="skill">🧠 حل مسئله</div>
+        <div class="skill">📚 یادگیری مداوم</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="section-title">🚀 پروژه‌های من</h2>
+    <p class="section-description">اینجا پروژه‌هایی رو معرفی می‌کنم که می‌سازم.</p>
+
+    <div class="cards">
+        <article class="card">
+            <div class="icon">🐍</div>
+            <h3>پروژه‌های پایتون</h3>
+            <p>
+                پروژه‌های کوچک پایتون برای تمرین برنامه‌نویسی
+                و تقویت مهارت حل مسئله.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="icon">🌐</div>
+            <h3>وب‌سایت شخصی</h3>
+            <p>
+                همین سایت که با HTML و CSS ساخته شده
+                و با GitHub Pages منتشر شده.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="icon">💡</div>
+            <h3>ایده‌های آینده</h3>
+            <p>
+                پروژه‌های جدید در راه‌اند.
+                این بخش با پیشرفت من به‌روز می‌شه.
+            </p>
+        </article>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">📬 ارتباط با من</h2>
+    <div class="contact-box">
+        <p>
+            برای دیدن کدها و پروژه‌های من می‌تونی
+            پروفایل GitHub من رو ببینی.
+        </p>
+
+        <a class="button"
+           href="https://github.com/mohammad-nazari10"
+           target="_blank"
+           rel="noopener noreferrer">
+            مشاهده GitHub من ↗
+        </a>
+    </div>
+</section>
+
+<footer>
+    ساخته‌شده با ❤️ و کلی انگیزه برای یادگیری
+    <br>
+    © 2026 Mohammad.dev
+</footer>
+
 </body>
 </html>
