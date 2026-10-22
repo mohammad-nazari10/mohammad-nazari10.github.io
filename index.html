@@ -10,12 +10,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>محمد | وب‌سایت شخصی</title>
+    <title>محمدعلی نظری | برنامه‌نویس آینده</title>
 
-    <meta name="description" content="وب‌سایت شخصی محمد؛ آشنایی با من و راه‌های ارتباطی.">
+    <meta name="description"
+          content="وب‌سایت شخصی محمدعلی نظری؛ مسیر یادگیری برنامه‌نویسی، پروژه‌ها و راه‌های ارتباطی.">
 
     <style>
-        /* تنظیمات کلی */
         * {
             margin: 0;
             padding: 0;
@@ -34,27 +34,30 @@
         }
 
         a {
-            color: inherit;
             text-decoration: none;
+            color: inherit;
         }
 
-        /* نوار بالای سایت */
+        /* سربرگ */
         header {
-            width: 100%;
-            padding: 18px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 15px;
-            background: rgba(12, 12, 28, 0.95);
-            border-bottom: 1px solid #282044;
+            padding: 18px 8%;
+            background: rgba(8, 8, 18, 0.95);
+            border-bottom: 1px solid #292044;
+            backdrop-filter: blur(12px);
         }
 
         .logo {
-            color: #b388ff;
-            font-size: 25px;
+            font-size: 23px;
             font-weight: bold;
+            color: #b388ff;
         }
 
         nav {
@@ -64,7 +67,7 @@
         }
 
         nav a {
-            color: #dddded;
+            color: #ddd;
             transition: 0.3s;
         }
 
@@ -72,39 +75,38 @@
             color: #b388ff;
         }
 
-        /* بخش اصلی */
+        /* صفحه اصلی */
         .hero {
-            min-height: 85vh;
+            min-height: 90vh;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 60px 20px;
+            padding: 70px 20px;
             background:
                 radial-gradient(
                     circle at 50% 35%,
-                    rgba(110, 55, 200, 0.19),
+                    rgba(130, 60, 230, 0.22),
                     transparent 55%
                 );
         }
 
         .hero-content {
-            max-width: 750px;
+            max-width: 800px;
         }
 
-        /* عکس پروفایل */
-        .profile-img {
-            width: 175px;
-            height: 175px;
+        .profile {
+            width: 165px;
+            height: 165px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #a855f7;
-            box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+            box-shadow: 0 0 30px #7c3aed66;
             margin-bottom: 25px;
         }
 
         .hero h1 {
-            font-size: clamp(32px, 6vw, 52px);
+            font-size: clamp(30px, 6vw, 50px);
             margin-bottom: 15px;
         }
 
@@ -113,97 +115,182 @@
         }
 
         .hero p {
-            color: #c4c4d8;
+            color: #c5c5dc;
             font-size: 17px;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
+        }
+
+        .tag {
+            display: inline-block;
+            color: #67e8f9;
+            border: 1px solid #164e63;
+            background: #0c202b;
+            padding: 5px 15px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-size: 14px;
         }
 
         .button {
             display: inline-block;
-            padding: 12px 28px;
-            border-radius: 12px;
+            padding: 12px 25px;
+            border-radius: 10px;
             background: linear-gradient(135deg, #9333ea, #6d28d9);
             color: white;
-            font-weight: bold;
             transition: 0.3s;
-            box-shadow: 0 0 18px rgba(147, 51, 234, 0.25);
         }
 
         .button:hover {
             transform: translateY(-4px);
-            box-shadow: 0 0 25px rgba(147, 51, 234, 0.55);
+            box-shadow: 0 0 22px #9333ea88;
         }
 
-        /* بخش‌های سایت */
-        section.content-section {
+        /* بخش‌های عمومی */
+        .section {
             padding: 75px 8%;
             text-align: center;
         }
 
         .section-title {
-            font-size: 32px;
             color: #b388ff;
-            margin-bottom: 20px;
+            font-size: 32px;
+            margin-bottom: 12px;
         }
 
-        .section-description {
+        .section-subtitle {
+            color: #aaaac4;
+            margin: 0 auto 35px;
             max-width: 700px;
-            margin: 0 auto;
-            color: #c4c4d8;
         }
 
-        /* کارت معرفی */
+        /* درباره من */
         .about-card {
-            max-width: 750px;
-            margin: 30px auto 0;
+            max-width: 800px;
+            margin: auto;
             padding: 30px;
+            border: 1px solid #30234c;
             background: #111120;
-            border: 1px solid #30224d;
             border-radius: 18px;
+            color: #d7d7e8;
         }
 
-        /* راه‌های ارتباطی */
+        /* مهارت‌های در حال یادگیری */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .skill-card {
+            background: #111120;
+            border: 1px solid #30234c;
+            border-radius: 16px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px);
+            border-color: #a855f7;
+            box-shadow: 0 0 20px #9333ea22;
+        }
+
+        .skill-icon {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card h3 {
+            color: #e9d5ff;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #b8b8d0;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .learning-label {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            background: #172b27;
+            color: #6ee7b7;
+            border: 1px solid #245c4b;
+            font-size: 12px;
+        }
+
+        /* مسیر یادگیری */
+        .roadmap {
+            max-width: 750px;
+            margin: auto;
+            text-align: right;
+        }
+
+        .roadmap-item {
+            padding: 20px;
+            margin-bottom: 15px;
+            background: #111120;
+            border-right: 3px solid #9333ea;
+            border-radius: 10px;
+        }
+
+        .roadmap-item h3 {
+            color: #c4b5fd;
+            margin-bottom: 5px;
+        }
+
+        .roadmap-item p {
+            color: #b8b8d0;
+        }
+
+        /* ارتباطات */
         .contact-links {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 15px;
             max-width: 850px;
-            margin: 35px auto 0;
+            margin: auto;
         }
 
         .contact-links a {
-            display: inline-block;
             min-width: 150px;
             padding: 13px 20px;
+            border: 1px solid #6d3cb5;
             border-radius: 12px;
             background: #121222;
-            border: 1px solid #6d3cb5;
-            color: #eeeeff;
+            color: #eee;
             transition: 0.3s;
         }
 
         .contact-links a:hover {
             background: #7c3aed;
-            border-color: #c4b5fd;
-            box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+            box-shadow: 0 0 20px #7c3aed66;
             transform: translateY(-4px);
         }
 
-        /* پاورقی */
+        /* پایین سایت */
         footer {
             text-align: center;
             padding: 25px 15px;
             color: #9999b5;
             background: #0d0d19;
-            border-top: 1px solid #282044;
+            border-top: 1px solid #292044;
         }
 
         footer span {
             color: #b388ff;
         }
 
-        /* نمایش در موبایل */
+        /* موبایل */
         @media (max-width: 600px) {
             header {
                 justify-content: center;
@@ -212,19 +299,16 @@
 
             nav {
                 justify-content: center;
-                gap: 14px;
+                gap: 12px;
+                font-size: 14px;
             }
 
-            .hero {
-                min-height: 75vh;
+            .profile {
+                width: 135px;
+                height: 135px;
             }
 
-            .profile-img {
-                width: 145px;
-                height: 145px;
-            }
-
-            section.content-section {
+            .section {
                 padding: 55px 6%;
             }
 
@@ -237,67 +321,204 @@
 
 <body>
 
-    <!-- سربرگ -->
+    <!-- سربرگ سایت -->
     <header>
-        <a href="#home" class="logo">محمد.</a>
+        <a href="#home" class="logo">محمدعلی نظری</a>
 
         <nav>
             <a href="#home">خانه</a>
             <a href="#about">درباره من</a>
-            <a href="#contact">ارتباط با من</a>
+            <a href="#skills">برنامه‌نویسی</a>
+            <a href="#roadmap">مسیر یادگیری</a>
+            <a href="#contact">ارتباط</a>
         </nav>
     </header>
 
-    <!-- صفحه اصلی -->
     <main>
+
+        <!-- صفحه اصلی -->
         <section class="hero" id="home">
             <div class="hero-content">
 
-                <!--
-                    عکس خودت را با نام profile.jpg
-                    در کنار فایل index.html آپلود کن.
-                -->
+                <!-- برای نمایش عکس، فایل profile.jpg را کنار index.html آپلود کن -->
                 <img
                     src="profile.jpg"
-                    alt="عکس پروفایل محمد"
-                    class="profile-img"
+                    alt="عکس پروفایل محمدعلی نظری"
+                    class="profile"
                     onerror="this.style.display='none'"
                 >
 
-                <h1>سلام، من <span>محمد</span> هستم!</h1>
+                <br>
+
+                <span class="tag">
+                    در حال یادگیری برنامه‌نویسی
+                </span>
+
+                <h1>
+                    سلام، من <span>محمدعلی نظری</span> هستم
+                </h1>
 
                 <p>
-                    به وب‌سایت شخصی من خوش آمدی.
-                    اینجا می‌تونی با من آشنا بشی و از راه‌های ارتباطی
-                    زیر با من در ارتباط باشی.
+                    به دنیای من خوش اومدی!
+                    من در مسیر یادگیری برنامه‌نویسی هستم و
+                    قدم‌به‌قدم برای ساخت پروژه‌های جدید تلاش می‌کنم.
                 </p>
 
-                <a href="#about" class="button">
-                    بیشتر درباره من
+                <a href="#skills" class="button">
+                    مشاهده زبان‌های برنامه‌نویسی
                 </a>
 
             </div>
         </section>
 
         <!-- درباره من -->
-        <section class="content-section" id="about">
+        <section class="section" id="about">
+
             <h2 class="section-title">درباره من</h2>
 
+            <p class="section-subtitle">
+                آشنایی بیشتر با من و علاقه‌مندی‌هایم
+            </p>
+
             <div class="about-card">
-                <p class="section-description">
-                    من محمد هستم و این وب‌سایت شخصی منه.
-                    اینجا می‌تونی راه‌های ارتباط با من و
-                    صفحه‌های من در شبکه‌های اجتماعی رو پیدا کنی.
+                <p>
+                    من محمدعلی نظری هستم و به دنیای تکنولوژی
+                    و برنامه‌نویسی علاقه دارم.
+                </p>
+
+                <p>
+                    در حال یادگیری HTML، CSS و Python هستم
+                    تا بتوانم در آینده وب‌سایت‌ها و برنامه‌های
+                    کاربردی خودم را بسازم.
+                </p>
+
+                <p>
+                    هدفم این است که هر روز چیز جدیدی یاد بگیرم
+                    و با تمرین و ساخت پروژه، دانش خودم را بیشتر کنم.
                 </p>
             </div>
+
+        </section>
+
+        <!-- زبان‌های در حال یادگیری -->
+        <section class="section" id="skills">
+
+            <h2 class="section-title">
+                مسیر برنامه‌نویسی من
+            </h2>
+
+            <p class="section-subtitle">
+                فناوری‌هایی که در حال یادگیری آن‌ها هستم
+            </p>
+
+            <div class="skills">
+
+                <article class="skill-card">
+                    <div class="skill-icon">🌐</div>
+
+                    <h3>HTML</h3>
+
+                    <p>
+                        یادگیری ساختار صفحات وب،
+                        عنوان‌ها، متن‌ها، تصاویر و لینک‌ها.
+                    </p>
+
+                    <span class="learning-label">
+                        📚 در حال یادگیری
+                    </span>
+                </article>
+
+                <article class="skill-card">
+                    <div class="skill-icon">🎨</div>
+
+                    <h3>CSS</h3>
+
+                    <p>
+                        یادگیری طراحی صفحات وب،
+                        رنگ‌ها، چیدمان، انیمیشن و طراحی واکنش‌گرا.
+                    </p>
+
+                    <span class="learning-label">
+                        📚 در حال یادگیری
+                    </span>
+                </article>
+
+                <article class="skill-card">
+                    <div class="skill-icon">🐍</div>
+
+                    <h3>Python</h3>
+
+                    <p>
+                        یادگیری مفاهیم پایه برنامه‌نویسی،
+                        متغیرها، شرط‌ها، حلقه‌ها و توابع.
+                    </p>
+
+                    <span class="learning-label">
+                        📚 در حال یادگیری
+                    </span>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- مسیر پیشرفت -->
+        <section class="section" id="roadmap">
+
+            <h2 class="section-title">
+                نقشه راه یادگیری
+            </h2>
+
+            <p class="section-subtitle">
+                قدم‌هایی برای پیشرفت در برنامه‌نویسی
+            </p>
+
+            <div class="roadmap">
+
+                <div class="roadmap-item">
+                    <h3>مرحله اول: HTML</h3>
+                    <p>
+                        یادگیری ساختار صفحات و ساخت اولین صفحه وب.
+                    </p>
+                </div>
+
+                <div class="roadmap-item">
+                    <h3>مرحله دوم: CSS</h3>
+                    <p>
+                        یادگیری استایل‌دهی و ساخت صفحات زیبا
+                        و سازگار با موبایل.
+                    </p>
+                </div>
+
+                <div class="roadmap-item">
+                    <h3>مرحله سوم: Python</h3>
+                    <p>
+                        یادگیری منطق برنامه‌نویسی و ساخت
+                        برنامه‌های ساده.
+                    </p>
+                </div>
+
+                <div class="roadmap-item">
+                    <h3>مرحله چهارم: ساخت پروژه</h3>
+                    <p>
+                        استفاده از آموخته‌ها برای ساخت
+                        پروژه‌های شخصی و افزودن آن‌ها به گیت‌هاب.
+                    </p>
+                </div>
+
+            </div>
+
         </section>
 
         <!-- ارتباط با من -->
-        <section class="content-section" id="contact">
-            <h2 class="section-title">ارتباط با من</h2>
+        <section class="section" id="contact">
 
-            <p class="section-description">
-                از طریق راه‌های زیر می‌تونی با من در ارتباط باشی.
+            <h2 class="section-title">
+                ارتباط با من
+            </h2>
+
+            <p class="section-subtitle">
+                راه‌های ارتباطی و شبکه‌های اجتماعی من
             </p>
 
             <div class="contact-links">
@@ -307,7 +528,7 @@
                 </a>
 
                 <a href="mailto:Mohammad.pron.786@gmail.com">
-                    📧 ارسال ایمیل
+                    📧 ایمیل
                 </a>
 
                 <a
@@ -343,13 +564,16 @@
                 </a>
 
             </div>
+
         </section>
+
     </main>
 
-    <!-- پایین سایت -->
+    <!-- پاورقی -->
     <footer>
         <p>
-            ساخته‌شده با ❤️ توسط <span>محمد</span>
+            ساخته‌شده با ❤️ توسط
+            <span>محمدعلی نظری</span>
         </p>
 
         <p>
@@ -358,12 +582,9 @@
     </footer>
 
     <script>
-        // نمایش خودکار سال جاری
         document.getElementById("year").textContent =
             new Date().getFullYear();
     </script>
 
 </body>
 </html>
-
-        
