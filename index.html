@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+
 <html lang="fa" dir="rtl">
 <head>
 <meta name="google-site-verification" content="4A3iKMFUlGV4fPy6yBFoNQ1C-Aobazf6JRhFsXimdXc" />
@@ -10,23 +10,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>وب‌سایت شخصی من</title>
+    <title>محمد | وب‌سایت شخصی</title>
 
-    <meta name="description" content="وب‌سایت شخصی و نمونه‌کارهای برنامه‌نویسی من">
+    <meta name="description" content="وب‌سایت شخصی محمد؛ آشنایی با من و راه‌های ارتباطی.">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
-
-        :root {
-            --bg: #080811;
-            --card: rgba(255, 255, 255, 0.045);
-            --text: #f5f5ff;
-            --muted: #a3a3bc;
-            --purple: #a855f7;
-            --cyan: #22d3ee;
-            --border: rgba(255, 255, 255, 0.10);
-        }
-
+        /* تنظیمات کلی */
         * {
             margin: 0;
             padding: 0;
@@ -38,11 +27,10 @@
         }
 
         body {
-            font-family: 'Vazirmatn', sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            font-family: Tahoma, Arial, sans-serif;
+            background: #080812;
+            color: #ffffff;
             line-height: 1.9;
-            overflow-x: hidden;
         }
 
         a {
@@ -50,322 +38,198 @@
             text-decoration: none;
         }
 
-        .background-glow {
-            position: fixed;
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            filter: blur(130px);
-            opacity: 0.18;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .glow-one {
-            background: var(--purple);
-            top: -100px;
-            right: -100px;
-        }
-
-        .glow-two {
-            background: var(--cyan);
-            bottom: 0;
-            left: -150px;
-        }
-
-        .container {
-            width: min(1100px, 90%);
-            margin: auto;
-        }
-
-        /* Navigation */
-
+        /* نوار بالای سایت */
         header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(8, 8, 17, 0.8);
-            backdrop-filter: blur(18px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        nav {
-            min-height: 75px;
+            width: 100%;
+            padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: rgba(12, 12, 28, 0.95);
+            border-bottom: 1px solid #282044;
         }
 
         .logo {
-            font-size: 1.35rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, var(--cyan), var(--purple));
-            -webkit-background-clip: text;
-            color: transparent;
+            color: #b388ff;
+            font-size: 25px;
+            font-weight: bold;
         }
 
-        .nav-links {
+        nav {
             display: flex;
-            gap: 25px;
-            list-style: none;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
-        .nav-links a {
-            color: var(--muted);
-            font-size: 0.9rem;
+        nav a {
+            color: #dddded;
             transition: 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--cyan);
+        nav a:hover {
+            color: #b388ff;
         }
 
-        /* Hero */
-
+        /* بخش اصلی */
         .hero {
             min-height: 85vh;
             display: flex;
+            justify-content: center;
             align-items: center;
-            padding: 80px 0;
+            text-align: center;
+            padding: 60px 20px;
+            background:
+                radial-gradient(
+                    circle at 50% 35%,
+                    rgba(110, 55, 200, 0.19),
+                    transparent 55%
+                );
         }
 
         .hero-content {
-            max-width: 760px;
+            max-width: 750px;
         }
 
-        .badge {
-            display: inline-block;
-            padding: 6px 15px;
-            border: 1px solid rgba(34, 211, 238, 0.3);
-            background: rgba(34, 211, 238, 0.07);
-            border-radius: 50px;
-            color: var(--cyan);
-            font-size: 0.85rem;
+        /* عکس پروفایل */
+        .profile-img {
+            width: 175px;
+            height: 175px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #a855f7;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
             margin-bottom: 25px;
         }
 
-        h1 {
-            font-size: clamp(2.5rem, 7vw, 5rem);
-            line-height: 1.35;
-            font-weight: 800;
-            margin-bottom: 20px;
+        .hero h1 {
+            font-size: clamp(32px, 6vw, 52px);
+            margin-bottom: 15px;
         }
 
-        .gradient-text {
-            background: linear-gradient(90deg, var(--cyan), var(--purple));
-            -webkit-background-clip: text;
-            color: transparent;
+        .hero h1 span {
+            color: #b388ff;
         }
 
         .hero p {
-            max-width: 620px;
-            color: var(--muted);
-            font-size: 1.05rem;
+            color: #c4c4d8;
+            font-size: 17px;
             margin-bottom: 30px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
         }
 
         .button {
             display: inline-block;
-            padding: 11px 24px;
+            padding: 12px 28px;
             border-radius: 12px;
-            font-weight: 600;
+            background: linear-gradient(135deg, #9333ea, #6d28d9);
+            color: white;
+            font-weight: bold;
             transition: 0.3s;
-        }
-
-        .button-primary {
-            background: linear-gradient(100deg, var(--purple), #7c3aed);
-            box-shadow: 0 0 25px rgba(168, 85, 247, 0.22);
-        }
-
-        .button-secondary {
-            border: 1px solid var(--border);
-            background: var(--card);
+            box-shadow: 0 0 18px rgba(147, 51, 234, 0.25);
         }
 
         .button:hover {
             transform: translateY(-4px);
+            box-shadow: 0 0 25px rgba(147, 51, 234, 0.55);
         }
 
-        /* General sections */
-
-        section {
-            padding: 75px 0;
-            scroll-margin-top: 80px;
-        }
-
-        .section-heading {
-            margin-bottom: 35px;
-        }
-
-        .section-heading h2 {
-            font-size: clamp(1.7rem, 4vw, 2.5rem);
-            margin-bottom: 8px;
-        }
-
-        .section-heading p {
-            color: var(--muted);
-        }
-
-        .card {
-            padding: 25px;
-            border: 1px solid var(--border);
-            background: var(--card);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(168, 85, 247, 0.5);
-            box-shadow: 0 10px 40px rgba(168, 85, 247, 0.08);
-        }
-
-        .about-text {
-            color: var(--muted);
-        }
-
-        /* Skills */
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 16px;
-        }
-
-        .skill {
+        /* بخش‌های سایت */
+        section.content-section {
+            padding: 75px 8%;
             text-align: center;
-            padding: 20px 12px;
         }
 
-        .skill-icon {
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-
-        .skill h3 {
-            font-size: 1rem;
-        }
-
-        .skill p {
-            color: var(--muted);
-            font-size: 0.8rem;
-        }
-
-        /* Projects */
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .project-number {
-            display: inline-flex;
-            width: 45px;
-            height: 45px;
-            align-items: center;
-            justify-content: center;
-            border-radius: 14px;
-            color: var(--cyan);
-            background: rgba(34, 211, 238, 0.09);
-            margin-bottom: 18px;
-            font-weight: 800;
-        }
-
-        .project h3 {
-            margin-bottom: 10px;
-        }
-
-        .project p {
-            color: var(--muted);
-            font-size: 0.92rem;
+        .section-title {
+            font-size: 32px;
+            color: #b388ff;
             margin-bottom: 20px;
         }
 
-        .project-link {
-            color: var(--cyan);
-            font-size: 0.9rem;
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #c4c4d8;
         }
 
-        /* Contact */<div class="social-links">
-
-    <a href="https://github.com/USERNAME"
-       target="_blank" rel="noopener noreferrer">
-
-</div>
-
-        .contact-card {
-            text-align: center;
-            padding: 45px 25px;
+        /* کارت معرفی */
+        .about-card {
+            max-width: 750px;
+            margin: 30px auto 0;
+            padding: 30px;
+            background: #111120;
+            border: 1px solid #30224d;
+            border-radius: 18px;
         }
 
-        .contact-card p {
-            color: var(--muted);
-            margin: 10px auto 25px;
-            max-width: 550px;
-        }
-
-        .social-links {
+        /* راه‌های ارتباطی */
+        .contact-links {
             display: flex;
             justify-content: center;
-            gap: 12px;
             flex-wrap: wrap;
+            gap: 15px;
+            max-width: 850px;
+            margin: 35px auto 0;
         }
 
-        .social-links a {
-            padding: 9px 16px;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            color: var(--muted);
+        .contact-links a {
+            display: inline-block;
+            min-width: 150px;
+            padding: 13px 20px;
+            border-radius: 12px;
+            background: #121222;
+            border: 1px solid #6d3cb5;
+            color: #eeeeff;
             transition: 0.3s;
         }
 
-        .social-links a:hover {
-            color: var(--cyan);
-            border-color: var(--cyan);
+        .contact-links a:hover {
+            background: #7c3aed;
+            border-color: #c4b5fd;
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+            transform: translateY(-4px);
         }
 
+        /* پاورقی */
         footer {
             text-align: center;
-            padding: 25px 0;
-            border-top: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 0.85rem;
+            padding: 25px 15px;
+            color: #9999b5;
+            background: #0d0d19;
+            border-top: 1px solid #282044;
         }
 
-        /* Mobile *
+        footer span {
+            color: #b388ff;
+        }
 
-        @media (max-width: 650px) {
-            nav {
-                padding: 15px 0;
-                align-items: flex-start;
-                flex-direction: column;
+        /* نمایش در موبایل */
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
             }
 
-            .nav-links {
+            nav {
+                justify-content: center;
                 gap: 14px;
             }
 
             .hero {
-                min-height: auto;
-                padding: 100px 0 60px;
+                min-height: 75vh;
             }
 
-            section {
-                padding: 55px 0;
+            .profile-img {
+                width: 145px;
+                height: 145px;
             }
 
-            .card {
-                padding: 20px;
+            section.content-section {
+                padding: 55px 6%;
+            }
+
+            .contact-links a {
+                width: 100%;
             }
         }
     </style>
@@ -373,231 +237,133 @@
 
 <body>
 
-    <div class="background-glow glow-one"></div>
-    <div class="background-glow glow-two"></div>
-
-    <!-- Navigation -->
+    <!-- سربرگ -->
     <header>
-        <nav class="container">
+        <a href="#home" class="logo">محمد.</a>
 
-            <!-- نام خودت را جیگزین کن محمد علی نظری-->
-            <a href="#home" class="logo">MY PORTFOLIO.</a>
-
-            <ul class="nav-links">
-                <li><a href="#home">خانه</a></li>
-                <li><a href="#about">درباره من</a></li>
-                <li><a href="#skills">مهارت‌ها</a></li>
-                <li><a href="#projects">پروژه‌ها</a></li>
-                <li><a href="#contact">ارتباط</a></li>
-            </ul>
-
+        <nav>
+            <a href="#home">خانه</a>
+            <a href="#about">درباره من</a>
+            <a href="#contact">ارتباط با من</a>
         </nav>
     </header>
 
+    <!-- صفحه اصلی -->
     <main>
-
-        <!-- Hero -->
-        <section class="hero container" id="home">
-
+        <section class="hero" id="home">
             <div class="hero-content">
 
-                <span class="badge">✦ در حال یادگیری و پیشرفت</span>
+                <!--
+                    عکس خودت را با نام profile.jpg
+                    در کنار فایل index.html آپلود کن.
+                -->
+                <img
+                    src="profile.jpg"
+                    alt="عکس پروفایل محمد"
+                    class="profile-img"
+                    onerror="this.style.display='none'"
+                >
 
-                <h1>
-                    سلام، من
-                    <span class="gradient-text">محمدعلی نظری</span>
-                    هستم.
-                    <br>
-                    برنامه‌نویس آینده!
-                </h1>
+                <h1>سلام، من <span>محمد</span> هستم!</h1>
 
                 <p>
                     به وب‌سایت شخصی من خوش آمدی.
-                    من در حال یادگیری برنامه‌نویسی هستم و اینجا
-                    مسیر یادگیری، پروژه‌ها و پیشرفت خودم را به اشتراک می‌گذارم.
+                    اینجا می‌تونی با من آشنا بشی و از راه‌های ارتباطی
+                    زیر با من در ارتباط باشی.
                 </p>
 
-                <div class="buttons">
-                    <a href="#projects" class="button button-primary">
-                        دیدن پروژه‌ها
-                    </a>
-
-                    <a href="#about" class="button button-secondary">
-                        بیشتر درباره من
-                    </a>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- About -->
-        <section id="about">
-            <div class="container">
-
-                <div class="section-heading">
-                    <h2>درباره <span class="gradient-text">من</span></h2>
-                    <p>کمی درباره مسیر و هدف‌هایم</p>
-                </div>
-
-                <div class="card">
-                    <p class="about-text">
-                        من به دنیای برنامه‌نویسی و ساختن چیزهای جدید علاقه دارم.
-                        در حال حاضر یادگیری پایتون را شروع کرده‌ام و می‌خواهم
-                        قدم‌به‌قدم مهارت‌های خودم را توسعه دهم.
-                        هدف من ساخت پروژه‌های واقعی، یادگیری طراحی وب و
-                        تبدیل ایده‌هایم به محصولات کاربردی است.
-                    </p>
-                </div>
+                <a href="#about" class="button">
+                    بیشتر درباره من
+                </a>
 
             </div>
         </section>
 
-        <!-- Skills -->
-        <section id="skills">
-            <div class="container">
+        <!-- درباره من -->
+        <section class="content-section" id="about">
+            <h2 class="section-title">درباره من</h2>
 
-                <div class="section-heading">
-                    <h2>مهارت‌های <span class="gradient-text">من</span></h2>
-                    <p>چیزهایی که یاد می‌گیرم یا می‌خواهم یاد بگیرم</p>
-                </div>
-
-                <div class="skills-grid">
-
-                    <div class="card skill">
-                        <div class="skill-icon">🐍</div>
-                        <h3>Python</h3>
-                        <p>در حال یادگیری</p>
-                    </div>
-
-                    <div class="card skill">
-                        <div class="skill-icon">🌐</div>
-                        <h3>HTML</h3>
-                        <p>مقدماتی</p>
-                    </div>
-
-                    <div class="card skill">
-                        <div class="skill-icon">🎨</div>
-                        <h3>CSS</h3>
-                        <p>در مسیر یادگیری</p>
-                    </div>
-
-                    <div class="card skill">
-                        <div class="skill-icon">💻</div>
-                        <h3>GitHub</h3>
-                        <p>مدیریت پروژه‌ها</p>
-                    </div>
-
-                </div>
-
+            <div class="about-card">
+                <p class="section-description">
+                    من محمد هستم و این وب‌سایت شخصی منه.
+                    اینجا می‌تونی راه‌های ارتباط با من و
+                    صفحه‌های من در شبکه‌های اجتماعی رو پیدا کنی.
+                </p>
             </div>
         </section>
 
-        <!-- Projects -->
-        <section id="projects">
-            <div class="container">
+        <!-- ارتباط با من -->
+        <section class="content-section" id="contact">
+            <h2 class="section-title">ارتباط با من</h2>
 
-                <div class="section-heading">
-                    <h2>پروژه‌های <span class="gradient-text">من</span></h2>
-                    <p>نمونه‌ای از کارهایی که انجام داده‌ام</p>
-                </div>
+            <p class="section-description">
+                از طریق راه‌های زیر می‌تونی با من در ارتباط باشی.
+            </p>
 
-                <div class="projects-grid">
+            <div class="contact-links">
 
-                    <article class="card project">
-                        <div class="project-number">01</div>
-                        <h3>اولین پروژه پایتون</h3>
-                        <p>
-                            اولین قدم من در برنامه‌نویسی با پایتون؛
-                            شامل تمرین‌های مقدماتی و محاسبات ساده.
-                        </p>
+                <a href="tel:09397009029">
+                    📱 تماس تلفنی
+                </a>
 
-                        <!-- لینک پروژه خودت را قرار بده -->
-                        <a href="https://github.com/" class="project-link">
-                            مشاهده پروژه ↗
-                        </a>
-                    </article>
+                <a href="mailto:Mohammad.pron.786@gmail.com">
+                    📧 ارسال ایمیل
+                </a>
 
-                    <article class="card project">
-                        <div class="project-number">02</div>
-                        <h3>وب‌سایت شخصی</h3>
-                        <p>
-                            همین وب‌سایت شخصی که برای معرفی خودم
-                            و نمایش پروژه‌هایم ساخته‌ام.
-                        </p>
+                <a
+                    href="https://t.me/MohamadN29"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    ✈️ تلگرام
+                </a>
 
-                        <a href="#home" class="project-link">
-                            مشاهده سایت ↗
-                        </a>
-                    </article>
+                <a
+                    href="https://instagram.com/_mohammad___nazari"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    📸 اینستاگرام
+                </a>
 
-                    <article class="card project">
-                        <div class="project-number">03</div>
-                        <h3>پروژه بعدی من</h3>
-                        <p>
-                            این بخش را بعداً با پروژه جدیدی که می‌سازم
-                            و لینک GitHub آن تکمیل خواهم کرد.
-                        </p>
+                <a
+                    href="https://github.com/mohammad-nazari10"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    💻 گیت‌هاب
+                </a>
 
-                        <a href="https://github.com/" class="project-link">
-                            به‌زودی ↗
-                        </a>
-                    </article>
-
-                </div>
+                <a
+                    href="https://mohammad-nazari10.github.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    🌐 وب‌سایت من
+                </a>
 
             </div>
         </section>
-
-        <!-- Contact -->
-        <section id="contact">
-            <div class="container">
-
-                <div class="card contact-card">
-
-                    <div class="section-heading">
-                        <h2>ارتباط با <span class="gradient-text">من</span></h2>
-                    </div>
-
-                    <p>
-                        می‌توانی از طریق لینک‌های زیر با من ارتباط برقرار کنی
-                        یا پروژه‌هایم را دنبال کنی.
-                    </p>
-
-                    <div class="social-links">
-
-                        <!-- لینک‌ها را با آدرس واقعی خودت عوض کن -->
-                        <a href="https://github.com/mohammad-nazari10/mohammad-nazari10.github.io/edit/main/index.html">GitHub</a>
-
-                        <a href="https://instagram.com/_mohammad__nazari">Instagram</a>
-
-                        <a href="https://t.me/@mohammadN29">Telegram</a>
-
-                        <!-- ایمیل نمونه است؛ با ایمیل خودت جایگزین کن -->
-
-                        <a href="mailto:your-email@mohammad.pron.786">Email</a>
-                        <a href="tel:+989397009029">📞 تماس با من</a>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
     </main>
 
+    <!-- پایین سایت -->
     <footer>
-        <div class="container">
-            © <span id="year"></span> وب‌سایت شخصی من | ساخته‌شده با علاقه 💜
-        </div>
+        <p>
+            ساخته‌شده با ❤️ توسط <span>محمد</span>
+        </p>
+
+        <p>
+            © <span id="year"></span> تمام حقوق محفوظ است.
+        </p>
     </footer>
 
     <script>
+        // نمایش خودکار سال جاری
         document.getElementById("year").textContent =
             new Date().getFullYear();
     </script>
 
 </body>
 </html>
-    
+
+        
